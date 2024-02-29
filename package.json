@@ -1,0 +1,21 @@
+{
+  "name": "syncb",
+  "version": "1.0.1",
+  "description": "A simple script to sync current branch with remote branch (Sync fork functionality)",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sync",
+    "fork",
+    "github",
+    "sync fork",
+    "sync branch",
+    "branch",
+    "git"
+  ],
+  "author": "sidmohanty11",
+  "license": "MIT"
+}
