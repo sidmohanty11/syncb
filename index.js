@@ -12,6 +12,7 @@ const getParentRepoUrl = (username, repository) => {
       method: "GET",
       headers: {
         "User-Agent": "GitHub-Parent-Fork-Info",
+        Authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
     };
 
