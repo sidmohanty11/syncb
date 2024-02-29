@@ -1,6 +1,6 @@
 {
   "name": "syncb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple script to sync current branch with remote branch (Sync fork functionality)",
   "main": "index.js",
   "bin": "index.js",

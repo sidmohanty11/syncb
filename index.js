@@ -6,13 +6,14 @@ const https = require("https");
 
 const getParentRepoUrl = (username, repository) => {
   return new Promise((resolve, reject) => {
+    const token = execSync("echo $GITHUB_TOKEN").toString().trim();
     const options = {
       hostname: "api.github.com",
       path: `/repos/${username}/${repository}`,
       method: "GET",
       headers: {
         "User-Agent": "GitHub-Parent-Fork-Info",
-        Authorization: `token ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${token}`,
       },
     };
 
