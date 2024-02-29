@@ -2,6 +2,7 @@
 
 const { execSync } = require("child_process");
 const fs = require("fs");
+const https = require("https");
 
 const getParentRepoUrl = (username, repository) => {
   return new Promise((resolve, reject) => {
@@ -55,7 +56,24 @@ const syncParentFork = async () => {
 
   try {
     execSync("git remote get-url upstream").toString().trim();
+  } catch (error) {
+    // set upstream
+    const username = execSync("git remote get-url origin")
+      .toString()
+      .trim()
+      .split("/")[3];
 
+    const repository = execSync("git remote get-url origin")
+      .toString()
+      .trim()
+      .split("/")[4]
+      .split(".git")[0];
+    const parentRepoUrl = await getParentRepoUrl(username, repository);
+    console.log("Setting upstream to", parentRepoUrl);
+    execSync(`git remote add upstream ${parentRepoUrl}`);
+  }
+
+  try {
     const currentBranch = execSync("git rev-parse --abbrev-ref HEAD")
       .toString()
       .trim();
@@ -70,24 +88,6 @@ const syncParentFork = async () => {
 
     console.log("Parent fork synced successfully.");
   } catch (error) {
-    if (error.message === "Command failed: git remote get-url upstream") {
-      // set upstream
-      const username = execSync("git remote get-url origin")
-        .toString()
-        .trim()
-        .split("/")[3];
-
-      const repository = execSync("git remote get-url origin")
-        .toString()
-        .trim()
-        .split("/")[4]
-        .split(".git")[0];
-      const parentRepoUrl = await getParentRepoUrl(username, repository);
-      console.log("Setting upstream to", parentRepoUrl);
-      execSync(`git remote add upstream ${parentRepoUrl}`);
-      syncParentFork();
-      return;
-    }
     console.error("An error occurred:", error.message);
     process.exit(1);
   }
