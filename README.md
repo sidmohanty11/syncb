@@ -10,6 +10,7 @@ Install syncb globally using npm:
 ```bash
 npm i -g syncb
 ```
+
 ```bash
 syncb
 ```
@@ -23,7 +24,7 @@ syncb intelligently determines the remote URL of the upstream repository based o
 If no upstream remote is configured, syncb retrieves the parent repository's URL from the GitHub API. However, to access private repositories, you'll need to provide a valid GITHUB_TOKEN environment variable.
 - Seamless Change Fetching:
 syncb fetches the latest commits and code changes from the upstream repository, keeping your local branch in sync with the parent's evolution.
-= Careful Merge Integration:
+- Careful Merge Integration:
 syncb integrates the fetched changes into your current local branch using a merge operation. This incorporates the upstream's updates while preserving your local modifications.
 
 ### Using Private Forks
@@ -42,7 +43,7 @@ Store it in your `.zshrc` or similar.
 > Security: Do not share your personal access token publicly. Store it securely using environment variable managers or other secure methods.
 
 ### Contributing
-We're enthusiastic about contributions! If you have ideas to enhance syncb, feel free to submit an issue or pull request on the project's GitHub repository (link to be provided).
+We're enthusiastic about contributions! If you have ideas to enhance syncb, feel free to submit an issue or pull request on the project's GitHub repository.
 
 ### License
 syncb is distributed under the MIT License (refer to the LICENSE file for details).
