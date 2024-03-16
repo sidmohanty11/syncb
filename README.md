@@ -29,10 +29,8 @@ syncb integrates the fetched changes into your current local branch using a merg
 ### Using Private Forks
 To use syncb with private forks, you'll need to create a personal access token on GitHub and set it as the GITHUB_TOKEN environment variable. Here's how:
 
-- Go to your GitHub settings (https://docs.github.com/).
-- Click on "Developer settings" in the left sidebar.
-- Under "Developer settings," select "Personal access tokens."
-- Click "Generate new token."
+- Go to your GitHub settings (https://github.com/settings/tokens).
+- Click "Generate new token.", Use classic.
 - Give your token a descriptive name (e.g., "syncb-token").
 - Select the scopes needed by syncb: `repo`: Allows read access to private repositories.
 - Click on "Generate token."
