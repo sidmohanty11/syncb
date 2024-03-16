@@ -2,6 +2,8 @@
 
 Sync your forks using one command.
 
+Blog: [How I sync my forked repo with the parent using this CLI tool (saves me a lot of time)](https://dev.to/sidmohanty11/how-i-sync-my-forked-repo-with-the-parent-using-this-cli-tool-saves-me-a-lot-of-time-hoc)
+
 ![syncb](https://github.com/sidmohanty11/syncb/assets/73601258/bd97a908-b9c0-43a3-bbe4-14203fe8c081)
 
 ### Installation
